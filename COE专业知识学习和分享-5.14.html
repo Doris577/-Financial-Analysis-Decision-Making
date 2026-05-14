@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08、09章节分享</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0), rgba(16, 185, 129, 0.05));
+        }
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.05));
+        }
+        .highlight-gradient-orange {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.05));
+        }
+        .highlight-gradient-red {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.05));
+        }
+        .highlight-gradient-teal {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0), rgba(20, 184, 166, 0.05));
+        }
+        .highlight-gradient-indigo {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0), rgba(99, 102, 241, 0.05));
+        }
+        /* 新增实务案例样式优化 */
+        .tax-case-item {
+            border-left: 3px solid #6366F1;
+            padding-left: 12px;
+            margin-bottom: 8px;
+        }
+        .tax-rule-tag {
+            background-color: #EEF2FF;
+            color: #4F46E5;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- 标题卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <div class="text-sm font-medium text-blue-600 mb-2">Financial Analysis & Decision Making</div>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">08、09章节分享</h1>
+                </div>
+            </div>
+
+            <!-- 核心观点摘要 -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-lightbulb text-green-500 mr-3"></i>
+                        核心观点摘要
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        两个章节分别介绍了由利润总额到净利润的过程、利润分配的几个方式以及资产负债表的利润表的勾稽关系。
+                    </p>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">权责发生制</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">递延所得税</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">财务报表勾稽关系</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">行业差异</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">复杂财务状况</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 所得税会计处理原理 -->
+            <div class="card md:col-span-2 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-calculator text-purple-500 mr-3"></i>
+                        所得税会计处理原理
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        所得税会计的核心在于处理<span class="font-bold">会计利润与应税所得之间的差异</span>，通过递延所得税资产和负债来调节权责发生制与收付实现制的差异。
+                    </p>
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <p class="text-sm text-purple-800">
+                            <i class="fa-solid fa-circle-info mr-2"></i>
+                            会计按准则来，讲究权责发生制；税局按税法来，更看重实际和政策导向。
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white border border-purple-200 rounded-lg p-4">
+                            <div class="text-sm font-medium text-purple-700 mb-2">应纳税暂时性差异</div>
+                            <p class="text-xs text-gray-600">未来收回资产或清偿负债期间将导致产生应税金额的暂时性差异</p>
+                        </div>
+                        <div class="bg-white border border-purple-200 rounded-lg p-4">
+                            <div class="text-sm font-medium text-purple-700 mb-2">可抵扣暂时性差异</div>
+                            <p class="text-xs text-gray-600">未来收回资产或清偿负债期间将导致产生可抵扣金额的暂时性差异</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 利润计算结构 -->
+            <div class="card md:col-span-2 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-orange"></div>
+                <div class="relative">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-chart-line text-orange-500 mr-3"></i>
+                        利润计算的多层次结构
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 rounded-full w-8 h-8 flex items-center justify-center text-orange-700 font-bold mr-4">1</div>
+                            <div>
+                                <div class="font-medium text-gray-900">营业利润</div>
+                                <div class="text-xs text-gray-600">营业收入-营业成本-税金及附加-销售/管理/财务费用-资产减值损失±公允价值变动损益±投资收益+其他收益</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 rounded-full w-8 h-8 flex items-center justify-center text-orange-700 font-bold mr-4">2</div>
+                            <div>
+                                <div class="font-medium text-gray-900">利润总额</div>
+                                <div class="text-xs text-gray-600">营业利润+营业外收入-营业外支出</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 rounded-full w-8 h-8 flex items-center justify-center text-orange-700 font-bold mr-4">3</div>
+                            <div>
+                                <div class="font-medium text-gray-900">净利润</div>
+                                <div class="text-xs text-gray-600">利润总额-所得税费用</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-orange-50 rounded-lg">
+                        <p class="text-sm text-orange-800">
+                            <i class="fa-solid fa-exclamation-triangle mr-2"></i>
+                            2027年起新版利润表将分为五大板块：经营活动、投资活动、筹资活动、所得税、终止经营
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 利润分配法定程序 -->
+            <div class="card md:col-span-2 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-teal"></div>
+                <div class="relative">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-share-nodes text-teal-500 mr-3"></i>
+                        利润分配的法定程序
+                    </h2>
+                    <div class="relative">
+                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-teal-200"></div>
+                        <div class="space-y-6">
+                            <div class="relative flex items-start">
+                                <div class="bg-teal-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold z-10">1</div>
+                                <div class="ml-6">
+                                    <div class="font-medium text-gray-900">弥补以前年度亏损</div>
+                                    <div class="text-xs text-gray-600">公司法定公积金不足以弥补以前年度亏损的，应当先用当年利润弥补亏损</div>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="bg-teal-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold z-10">2</div>
+                                <div class="ml-6">
+                                    <div class="font-medium text-gray-900">提取法定公积金</div>
+                                    <div class="text-xs text-gray-600">提取利润的10%列入公司法定公积金，累计额达注册资本50%以上的可不再提取</div>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="bg-teal-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold z-10">3</div>
+                                <div class="ml-6">
+                                    <div class="font-medium text-gray-900">提取任意公积金</div>
+                                    <div class="text-xs text-gray-600">经股东会决议，可从税后利润中提取任意公积金</div>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="bg-teal-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold z-10">4</div>
+                                <div class="ml-6">
+                                    <div class="font-medium text-gray-900">向股东分配股利</div>
+                                    <div class="text-xs text-gray-600">原则上应从累计盈利中分派股利，无盈利不得支付股利</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 三张报表关系 -->
+            <div class="card md:col-span-2 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-sitemap text-red-500 mr-3"></i>
+                        三张报表间的勾稽关系
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="bg-white border border-red-200 rounded-lg p-4">
+                            <div class="text-sm font-medium text-red-700 mb-2">资产负债表与利润表</div>
+                            <div class="text-xs text-gray-600 mb-2">核心勾稽点：未分配利润</div>
+                            <div class="bg-red-50 p-2 rounded text-xs text-red-800">
+                                期末未分配利润 = 期初未分配利润 + 本期净利润 - 本期分配的股利 - 提取的盈余公积
+                            </div>
+                        </div>
+                        <div class="bg-white border border-red-200 rounded-lg p-4">
+                            <div class="text-sm font-medium text-red-700 mb-2">递延所得税在报表中的列示</div>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div>
+                                    <span class="font-medium">资产负债表：</span>
+                                    <span class="text-gray-600">递延所得税资产(非流动资产)</span>
+                                </div>
+                                <div>
+                                    <span class="font-medium">资产负债表：</span>
+                                    <span class="text-gray-600">递延所得税负债(非流动负债)</span>
+                                </div>
+                                <div>
+                                    <span class="font-medium">利润表：</span>
+                                    <span class="text-gray-600">所得税费用(单独列示)</span>
+                                </div>
+                                <div>
+                                    <span class="font-medium">所有者权益变动表：</span>
+                                    <span class="text-gray-600">利润分配全过程</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 优化后：所得税会计处理实例（贴近实务+情形更具体） -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-indigo"></div>
+                <div class="relative">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fa-solid fa-car text-indigo-500 mr-3"></i>
+                        所得税会计处理实例（参考《企业所得税涉税实务指南2025》）
+                    </h2>
+                    
+                    <!-- 一、形成递延所得税的具体情形（按实务分类，更具体） -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fa-solid fa-list-check text-indigo-400 mr-2 text-sm"></i>
+                            一、形成递延所得税的具体情形（汽车行业高频场景）
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- 应纳税暂时性差异（递延所得税负债） -->
+                            <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5">
+                                <div class="text-sm font-medium text-indigo-700 mb-3 flex items-center">
+                                    <i class="fa-solid fa-arrow-up-right-dots mr-2"></i>
+                                    应纳税暂时性差异（形成递延所得税负债）
+                                </div>
+                                <div class="space-y-3 text-xs text-gray-700">
+                                    <div class="tax-case-item">
+                                        <strong>1. 固定资产折旧差异</strong>
+                                        <p class="mt-1">汽车生产线/厂房：会计按10年直线法折旧（残值率5%），税法适用《财政部 税务总局关于设备器具扣除有关企业所得税政策的公告》（2023年第37号），允许对500万以下设备一次性扣除，或对新能源生产线按6年加速折旧，导致会计折旧额 < 税法扣除额，未来需补税。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>2. 无形资产摊销差异</strong>
+                                        <p class="mt-1">汽车专利/软件：会计按10年摊销，税法对符合条件的软件按2年摊销（财税〔2012〕27号），或对研发形成的无形资产按175%摊销，导致会计摊销额 < 税法扣除额。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>3. 交易性金融资产公允价值变动</strong>
+                                        <p class="mt-1">车企闲置资金购买的股票/基金：会计确认公允价值上升收益，税法规定持有期间收益暂不纳税，处置时计税，形成应纳税差异。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>4. 分期收款销售商品</strong>
+                                        <p class="mt-1">汽车分期销售：会计按合同总额确认收入，税法按合同约定收款日确认收入，会计确认收入早于税法，形成应纳税差异。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 可抵扣暂时性差异（递延所得税资产） -->
+                            <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5">
+                                <div class="text-sm font-medium text-indigo-700 mb-3 flex items-center">
+                                    <i class="fa-solid fa-arrow-down-left-dots mr-2"></i>
+                                    可抵扣暂时性差异（形成递延所得税资产）
+                                </div>
+                                <div class="space-y-3 text-xs text-gray-700">
+                                    <div class="tax-case-item">
+                                        <strong>1. 资产减值准备</strong>
+                                        <p class="mt-1">汽车存货跌价（滞销车型）、应收账款坏账、固定资产减值：会计计提减值损失减少利润，税法规定需实际发生且符合《企业资产损失所得税税前扣除管理办法》（国家税务总局公告2011年第25号）才能扣除。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>2. 预计负债（质保/召回）</strong>
+                                        <p class="mt-1">汽车质保金、召回费用：会计按权责发生制计提预计负债，税法需实际支付且取得合法凭证时扣除（国家税务总局公告2018年第28号）。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>3. 未弥补亏损</strong>
+                                        <p class="mt-1">新能源车企前期亏损：税法允许未来5年内弥补（高新技术企业/科技型中小企业可延长至10年），需确认递延所得税资产（需有足够应纳税所得额支撑）。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>4. 研发费用加计扣除</strong>
+                                        <p class="mt-1">汽车研发费用：会计据实列支，税法按《财政部 税务总局关于进一步完善研发费用税前加计扣除政策的公告》（2023年第7号），制造业按100%加计扣除，形成可抵扣差异。</p>
+                                    </div>
+                                    <div class="tax-case-item">
+                                        <strong>5. 预提费用</strong>
+                                        <p class="mt-1">年末预提的零部件采购款、广告费：会计确认费用，税法需在汇算清缴前实际支付并取得发票才能扣除。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 二、汽车制造业实务举例（更贴近实际） -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fa-solid fa-file-invoice text-indigo-400 mr-2 text-sm"></i>
+                            二、汽车制造业实务举例（附政策依据）
+                        </h3>
+                        <div class="space-y-5">
+                            <!-- 案例1：生产线折旧差异 -->
+                            <div class="bg-white border border-indigo-200 rounded-lg p-5">
+                                <div class="text-sm font-medium text-indigo-700 mb-3">
+                                    案例1：新能源汽车生产线折旧差异 <span class="tax-rule-tag">政策依据：财税2023年第37号</span>
+                                </div>
+                                <div class="text-xs text-gray-700 space-y-2 leading-relaxed">
+                                    <p><strong>基本情况：</strong>某新能源车企2024年1月购入电池生产线，原值6000万元（不含税），会计政策：按10年直线法折旧，残值率5%。</p>
+                                    <p><strong>会计处理：</strong>年折旧额 = 6000万 × (1-5%) ÷ 10 = 570万元/年</p>
+                                    <p><strong>税法处理：</strong>适用制造业加速折旧政策，允许按6年折旧（无残值），年扣除额 = 6000万 ÷ 6 = 1000万元/年</p>
+                                    <p><strong>差异计算：</strong>2024年可抵扣暂时性差异 = 1000万 - 570万 = 430万元</p>
+                                    <p><strong>递延所得税：</strong>确认递延所得税资产 = 430万 × 25% = 107.5万元（假设企业所得税率25%）</p>
+                                </div>
+                            </div>
+
+                            <!-- 案例2：整车质保预计负债 -->
+                            <div class="bg-white border border-indigo-200 rounded-lg p-5">
+                                <div class="text-sm font-medium text-indigo-700 mb-3">
+                                    案例2：整车质保预计负债 <span class="tax-rule-tag">政策依据：国家税务总局2018年第28号</span>
+                                </div>
+                                <div class="text-xs text-gray-700 space-y-2 leading-relaxed">
+                                    <p><strong>基本情况：</strong>某车企2024年销售燃油车10万辆，按历史数据计提3年整车质保费用，合计预提质保金8000万元。</p>
+                                    <p><strong>会计处理：</strong>借：销售费用-质保费 8000万 贷：预计负债-质保金 8000万（减少2024年利润）</p>
+                                    <p><strong>税法处理：</strong>2024年暂不允许税前扣除，需2025-2027年实际支付质保费用并取得维修发票时扣除。</p>
+                                    <p><strong>差异计算：</strong>可抵扣暂时性差异 = 8000万元</p>
+                                    <p><strong>递延所得税：</strong>确认递延所得税资产 = 8000万 × 25% = 2000万元</p>
+                                    <p><strong>后续处理：</strong>2025年实际支付质保费3000万，转回递延所得税资产750万元。</p>
+                                </div>
+                            </div>
+
+                            <!-- 案例3：研发费用加计扣除 -->
+                            <div class="bg-white border border-indigo-200 rounded-lg p-5">
+                                <div class="text-sm font-medium text-indigo-700 mb-3">
+                                    案例3：智能驾驶研发费用加计扣除 <span class="tax-rule-tag">政策依据：财税2023年第7号</span>
+                                </div>
+                                <div class="text-xs text-gray-700 space-y-2 leading-relaxed">
+                                    <p><strong>基本情况：</strong>某车企2024年发生智能驾驶系统研发费用1.2亿元（全部费用化，无资本化）。</p>
+                                    <p><strong>会计处理：</strong>借：研发费用-费用化支出 1.2亿 贷：银行存款 1.2亿（减少2024年利润）</p>
+                                    <p><strong>税法处理：</strong>制造业研发费用按100%加计扣除，税前可扣除金额 = 1.2亿 × (1+100%) = 2.4亿元</p>
+                                    <p><strong>差异计算：</strong>可抵扣暂时性差异 = 2.4亿 - 1.2亿 = 1.2亿元</p>
+                                    <p><strong>递延所得税：</strong>确认递延所得税资产 = 1.2亿 × 25% = 3000万元</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 利润表结构调整模块 -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-file-invoice text-blue-500 mr-3"></i>
+                        利润表结构调整模块
+                    </h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">《企业会计准则第30号——财务报表列报》修订征求意见稿（节选）</h3>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-xs text-gray-700 leading-relaxed">
+                            <p class="mb-3"><strong>第一章 总则</strong></p>
+                            <p class="mb-3">第一条 为了规范财务报表的列报，保证同一企业不同期间和同一期间不同企业的财务报表相互可比，根据《企业会计准则——基本准则》，制定本准则。</p>
+                            <p class="mb-3">第二条 财务报表是对企业财务状况、经营成果和现金流量的结构性表述。财务报表至少应当包括下列组成部分：</p>
+                            <p class="mb-3 ml-4">（一）资产负债表；</p>
+                            <p class="mb-3 ml-4">（二）利润表；</p>
+                            <p class="mb-3 ml-4">（三）现金流量表；</p>
+                            <p class="mb-3 ml-4">（四）所有者权益（或股东权益，下同）变动表；</p>
+                            <p class="mb-3 ml-4">（五）附注。</p>
+                            <p class="mb-3">第三条 本准则适用于个别财务报表和合并财务报表，以及年度财务报表和中期财务报表，《企业会计准则第32号——中期财务报告》另有规定的除外。合并财务报表的编制和列报，还应遵循《企业会计准则第33号——合并财务报表》；现金流量表的编制和列报，还应遵循《企业会计准则第31号——现金流量表》；其他会计准则的特殊列报要求，适用其他相关会计准则。</p>
+                            
+                            <p class="mb-3 mt-6"><strong>第二章 基本要求</strong></p>
+                            <p class="mb-3">第四条 企业应当以持续经营为基础，根据实际发生的交易和事项，按照《企业会计准则——基本准则》和其他各项会计准则的规定进行确认和计量，在此基础上编制财务报表。企业不应以附注披露代替确认和计量。</p>
+                            <p class="mb-3">如果以持续经营为基础编制财务报表不再合理，企业应当采用其他基础编制财务报表，并在附注中披露这一事实。</p>
+                            
+                            <p class="mb-3 mt-6"><strong>第三章 利润表列报的特殊规定</strong></p>
+                            <p class="mb-3">第二十条 企业应当在利润表中分别列示经营活动、投资活动、筹资活动产生的损益、所得税费用和终止经营损益。</p>
+                            <p class="mb-3">第二十一条 经营活动损益是指企业主要经营活动产生的损益，包括与销售商品、提供劳务直接相关的损益，以及为开展主要经营活动而发生的管理费用、销售费用等。</p>
+                            <p class="mb-3">第二十二条 投资活动损益是指企业对外投资和处置长期资产产生的损益，包括对联营企业和合营企业的投资收益、金融资产的公允价值变动损益、处置固定资产、无形资产等长期资产产生的损益等。</p>
+                            <p class="mb-3">第二十三条 筹资活动损益是指企业筹集资金和偿还资金产生的损益，包括利息收入、利息费用、汇兑损益等。</p>
+                            <p class="mb-3">第二十四条 本准则自2027年1月1日起施行。</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">IFRS国际会计准则政策表述（节选）</h3>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-xs text-gray-700 leading-relaxed">
+                            <p class="mb-3"><strong>IFRS 1 Presentation of Financial Statements</strong></p>
+                            <p class="mb-3">1. An entity shall present a complete set of financial statements at least annually.</p>
+                            <p class="mb-3">2. A complete set of financial statements comprises:</p>
+                            <p class="mb-3 ml-4">(a) a statement of financial position as at the end of the period;</p>
+                            <p class="mb-3 ml-4">(b) a statement of profit or loss and other comprehensive income for the period;</p>
+                            <p class="mb-3 ml-4">(c) a statement of changes in equity for the period;</p>
+                            <p class="mb-3 ml-4">(d) a statement of cash flows for the period;</p>
+                            <p class="mb-3 ml-4">(e) notes, comprising significant accounting policies and other explanatory information;</p>
+                            <p class="mb-3 ml-4">(f) comparative information in respect of the preceding period as specified in paragraphs 38 and 38A.</p>
+                            
+                            <p class="mb-3 mt-6"><strong>Statement of profit or loss and other comprehensive income</strong></p>
+                            <p class="mb-3">8. An entity shall present all items of income and expense recognized in a period in a single statement of profit or loss and other comprehensive income or in two statements:</p>
+                            <p class="mb-3 ml-4">(a) a statement displaying components of profit or loss (separate income statement);</p>
+                            <p class="mb-3 ml-4">(b) a second statement beginning with profit or loss and displaying components of other comprehensive income (statement of comprehensive income).</p>
+                            
+                            <p class="mb-3">9. An entity shall present an analysis of expenses recognized in profit or loss using a classification based on either their nature or their function within the entity, whichever provides information that is reliable and more relevant.</p>
+                            
+                            <p class="mb-3">10. The classification of expenses by function shall include, at a minimum, the following categories:</p>
+                            <p class="mb-3 ml-4">(a) revenue;</p>
+                            <p class="mb-3 ml-4">(b) finance costs;</p>
+                            <p class="mb-3 ml-4">(c) share of the profit or loss of associates and joint ventures accounted for using the equity method;</p>
+                            <p class="mb-3 ml-4">(d) tax expense;</p>
+                            <p class="mb-3 ml-4">(e) a single amount for the total of discontinued operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
